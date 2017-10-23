@@ -1,0 +1,102 @@
+/* Source for marking of 'To Do Item' as 'done' : https://angularjs.org/ */
+
+.done-true {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+
+/*** CSS loosly based on Source: http://todomvc.com/examples/angularjs/#/ **/
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1.4em;
+	color: #4d4d4d;
+	min-width: 230px;
+	max-width: 550px;
+	margin: 0 auto;
+	font-weight: 300;
+}
+
+h1 {
+	width: 100%;
+    padding: 20px 0;
+    margin: 0;
+	font-size: 37px;
+	font-weight: 300;
+	text-align: center;
+    background-color: #337ab7;
+    color: white;
+}
+
+#myToDoList {
+	background: #fff;
+    padding: 30px;
+	position: relative;
+    border: solid 1px cornflowerblue;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+	            0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+h2 {color: #337ab7; border-top: solid 1px #ededed; padding-top: 20px;}
+
+#myToDoList input {
+    padding: 10px;
+    margin: 0 0 10px 20px;
+	font-weight: 300;
+    border: solid 1px #ccc;
+    border-radius: 12px;
+}
+
+#myToDoList input.addToList {
+    font-size: 100%;
+    width: 60%;
+}
+
+#myToDoList input.deleteFromList {
+    font-size: 80%;
+    padding: 7px 10px;
+}
+
+#myToDoList input[type="text"] {
+	font-size: 100%;
+    width: 60%;
+	color: #4d4d4d;
+}
+
+#myToDoList input[type="submit"] {
+	color: white;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+#toDos {
+    margin: 0;
+    padding: 0;
+	list-style: none;
+}
+
+#toDos li {
+	position: relative;
+	font-size: 16px;
+    padding: 10px 10px 0 10px;
+	border-top: 1px solid #ededed;
+}
+
+#toDos li:last-child {
+	border-bottom: 1px solid #ededed;
+}
+
+#toDos li input[type="checkbox"] {
+    transform: scale(2);
+    margin-right: 20px; 
+}
+

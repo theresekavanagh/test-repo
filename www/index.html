@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html >
+ <meta charset="UTF-8"> 
+<head>
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Therese's Amazing To Do List</title>
+
+</head>
+
+<body>
+    
+    <!-- need to make sure angular is loaded before calling the funtions below -->
+    
+    <script src="js/angular.js"></script>
+    <!-- Note: can also include this from the CDN but downloaded angular to localhost in case of any connection issues CDN link here <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>-->   
+    <script src="js/controller.js"></script>
+    
+    <h1>Therese's Amazing To Do List</h1>
+    
+    <div class="container" id="myToDoList" data-ng-app="myToDoListModule" data-ng-controller="myToDoListController">
+        
+        
+    
+        <div><input type="text" placeholder="Add a title..." data-ng-model="newToDoItem.name" /></div>
+
+        <div><input type="text" placeholder="Add a description..." data-ng-model="newToDoItem.description" /></div>
+        
+        <input class="addToList" data-ng-click="addtoList()"  type="submit" value="Add To List">
+
+        <h2>My To Do List</h2>   
+        
+        <!-- Code Source: got the idea for this from here https://stackoverflow.com/questions/35041618/ng-if-check-if-array-is-empty -->
+        <p ng-if="toDoList.length == 0">Your List is Empty. Add Some To Dos.</p>
+        
+        <p ng-if="toDoList.length == 1">{{toDoList.length}} Item in Your List.</p>
+        
+        <p ng-if="toDoList.length > 1">{{toDoList.length}} Items in Your List.</p>
+        
+        <!-- NOT WORKING Source for counting remaining items left to do : https://angularjs.org/ 
+        <span>{{toDoList.remaining()}} of {{toDoList.length}} remaining</span>-->
+        
+        <!--<p>{{listMessage}}</p>-->
+    
+        <!-- Source for marking of 'To Do Item' as 'done' : https://angularjs.org/ -->
+        <ul id="toDos"> 
+            <li data-ng-repeat="currentItem in toDoList" ><input type="checkbox" ng-model="toDoItem.done"><span class="done-{{toDoItem.done}}"> <strong>{{currentItem.name}}:</strong> {{currentItem.description}} </span> <input class="deleteFromList" ng-click="deleteFromList($index)" type="submit" value="Delete"></li>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>
